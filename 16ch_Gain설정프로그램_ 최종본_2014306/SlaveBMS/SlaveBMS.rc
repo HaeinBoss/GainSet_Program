@@ -1,0 +1,358 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\SlaveBMS.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_GAIN_PROGRAM_ICO    ICON                    "res\\mod_ico.ico"
+IDR_MAINFRAME           ICON                    "res\\SlaveBMS.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 63
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Gain Set"
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    ICON            IDI_GAIN_PROGRAM_ICO,IDC_STATIC,14,14,18,17
+    LTEXT           "Gain Set, Version 1.05",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2014.03",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "OK",IDOK,113,42,50,14,WS_GROUP
+END
+
+IDD_SLAVEBMS_DIALOG DIALOGEX 0, 0, 738, 253
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Gain Set"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CTEXT           "RX",IDC_STATIC_RXA,276,8,15,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    COMBOBOX        IDC_COMBO_COMMA,79,9,76,114,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Open",IDC_BTN_COMMOPEN_A,168,7,43,16
+    COMBOBOX        IDC_COMBO_COMMB,79,34,76,119,CBS_DROPDOWNLIST | CBS_SORT | WS_TABSTOP
+    PUSHBUTTON      "Open",IDC_BTN_COMMOPEN_B,168,34,44,16
+    PUSHBUTTON      "BMS SET",IDC_BTN_SET,402,9,51,18
+    CTEXT           "TX",IDC_STATIC_TXB,230,34,15,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    CTEXT           "TX",IDC_STATIC_TXA,231,8,15,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    CTEXT           "RX",IDC_STATIC_RXB,276,34,15,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    CTEXT           "",IDC_STATIC_TXLED_A,250,8,15,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    CTEXT           "",IDC_STATIC_RXLED_A,294,8,15,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    CTEXT           "",IDC_STATIC_TXLED_B,249,34,15,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    CTEXT           "",IDC_STATIC_RXLED_B,293,34,15,15,SS_CENTERIMAGE,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_GAINLIST_A,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_OWNERDATA | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,10,70,718,175
+    RTEXT           "",IDC_LABEL_BMS,18,9,51,15
+    RTEXT           "",IDC_LABEL_MV2000,18,34,51,15
+    PUSHBUTTON      "Save File",IDC_BTN_SAVECSV_FILE,461,9,51,18
+    CONTROL         "Balancing Test",IDC_CHECK_BALANCING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,403,40,104,12
+END
+
+IDD_BMSSET_DLG DIALOGEX 0, 0, 211, 163
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BMS SET"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Mod ID",IDC_STATIC_MODLABEL,32,38,64,16,WS_BORDER
+    LTEXT           "Cell Num.",IDC_STATIC_CELLNUM_LABEL,32,63,64,16,WS_BORDER
+    LTEXT           "Temp Num.",IDC_STATIC_TEMPNUM_LABEL,32,89,64,16,WS_BORDER
+    EDITTEXT        IDC_EDIT_ID,109,38,64,16,ES_CENTER | ES_NUMBER | WS_GROUP,WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_EDIT_CELLNUM,109,62,64,16,ES_CENTER | ES_NUMBER | WS_GROUP,WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_EDIT_TEMPNUM,109,90,64,16,ES_CENTER | ES_NUMBER | WS_GROUP,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "SET",IDC_BTN_SET,106,124,68,17
+END
+
+IDD_CESGAIN_FORM DIALOGEX 0, 0, 474, 275
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "±¼¸²", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_16MOD_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_OWNERDATA | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,5,6,463,263
+END
+
+IDD_SUNVERGEGAIN_FORM DIALOGEX 0, 0, 474, 275
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "±¼¸²", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_14MOD_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_OWNERDATA | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,6,6,462,263
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 163
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_SLAVEBMS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 10
+        RIGHTMARGIN, 728
+        VERTGUIDE, 19
+        VERTGUIDE, 58
+        VERTGUIDE, 76
+        VERTGUIDE, 89
+        VERTGUIDE, 128
+        VERTGUIDE, 136
+        VERTGUIDE, 165
+        VERTGUIDE, 169
+        VERTGUIDE, 181
+        VERTGUIDE, 185
+        VERTGUIDE, 211
+        VERTGUIDE, 219
+        VERTGUIDE, 228
+        VERTGUIDE, 242
+        VERTGUIDE, 264
+        VERTGUIDE, 270
+        VERTGUIDE, 306
+        VERTGUIDE, 314
+        VERTGUIDE, 352
+        VERTGUIDE, 358
+        VERTGUIDE, 397
+        VERTGUIDE, 403
+        VERTGUIDE, 442
+        VERTGUIDE, 448
+        VERTGUIDE, 486
+        VERTGUIDE, 493
+        VERTGUIDE, 532
+        VERTGUIDE, 538
+        VERTGUIDE, 573
+        VERTGUIDE, 581
+        VERTGUIDE, 621
+        VERTGUIDE, 626
+        VERTGUIDE, 665
+        VERTGUIDE, 670
+        VERTGUIDE, 709
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 245
+        HORZGUIDE, 9
+        HORZGUIDE, 22
+        HORZGUIDE, 28
+        HORZGUIDE, 52
+        HORZGUIDE, 70
+        HORZGUIDE, 73
+        HORZGUIDE, 79
+        HORZGUIDE, 89
+        HORZGUIDE, 94
+        HORZGUIDE, 99
+        HORZGUIDE, 112
+        HORZGUIDE, 118
+        HORZGUIDE, 123
+        HORZGUIDE, 141
+        HORZGUIDE, 148
+        HORZGUIDE, 164
+        HORZGUIDE, 176
+        HORZGUIDE, 233
+    END
+
+    IDD_BMSSET_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 204
+        VERTGUIDE, 36
+        VERTGUIDE, 83
+        VERTGUIDE, 96
+        VERTGUIDE, 172
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+        HORZGUIDE, 38
+        HORZGUIDE, 49
+        HORZGUIDE, 63
+        HORZGUIDE, 74
+        HORZGUIDE, 89
+    END
+
+    IDD_CESGAIN_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 468
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 269
+    END
+
+    IDD_SUNVERGEGAIN_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 468
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 269
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,5,0
+ PRODUCTVERSION 1,0,5,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080004e4"
+        BEGIN
+            VALUE "CompanyName", "Kokam Electronics"
+            VALUE "FileDescription", "Gain Set Program v1.05"
+            VALUE "FileVersion", "1.0.5.0"
+            VALUE "InternalName", "SlaveBMS.exe"
+            VALUE "LegalCopyright", "Kokam Electronics.  All rights reserved."
+            VALUE "OriginalFilename", "SlaveBMS.exe"
+            VALUE "ProductName", "Gain Set Program"
+            VALUE "ProductVersion", "1.0.5.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x800, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_DKGREEN_LED         BITMAP                  "res\\DKGreen_LED.bmp"
+IDB_DKRED_LED           BITMAP                  "res\\DKRed_LED.bmp"
+IDB_GRAYL_LED           BITMAP                  "res\\Gray_LED.bmp"
+IDB_GREEN_LED           BITMAP                  "res\\Green_LED.bmp"
+IDB_RED_LED             BITMAP                  "res\\Red_LED.bmp"
+IDB_MOD14_RADIO         BITMAP                  "res\\radio_mod14.bmp"
+IDB_MOD16_RADIO         BITMAP                  "res\\radio_mod16.bmp"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About SlaveBMS..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\SlaveBMS.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,88 @@
+//// 프로젝트 제작일 : 2013-11-29
+
+
+////////////////////2013-12-04 (수) //////////////////////
+1. 통신구성 
+
+참고: i0nucleus.egloos.com/2006137
+
+Com Port 2개를 이용하여 멀티쓰레드로 제어함.
+
+Port 감지 :   USB  드라이버의 PORT 번호를 읽어옴
+
+	if(!pinfo->strDeviceType.CompareNoCase("PORT") && pinfo->strPName.Find("COM") >= 0)
+{
+	m_PortList.AddTail(pinfo);
+	TRACE("\n<%s><%s><%s><%s><%s><%s>",pinfo->strDeviceType,pinfo->strPName,
+      pinfo->strFName,pinfo->strMName,pinfo->strHWid,pinfo->strLocInfo);
+}
+else
+{
+	delete pinfo;
+}
+
+
+////////////////////2013-12-09 (월) //////////////////////
+
+1.  통신이 접속 되면, TX, RX  컨트롤이 동작하도록 구성함.
+
+COM 1 :  TX : YELLOW / RX : BLUE 
+
+COM 2 :  TX : YELLOW / RX : BLUE
+
+
+
+
+////////////////////2013-12-17 (화) //////////////////////
+
+1.  MV2000 통신 제작
+
+-->  통신 클래스:  ThreadSub (CWinThread)
+-->  쓰레드 동작
+
+SingleA.Lock();
+pSlaveBMS->Read_ModuleData(PutOnModBusStructure(0x01,0x03,Address,Cnt));
+SingleA.Unlock();
+
+2.   Multi thread 동작 제작
+
+ BMS #1 , BMS #2 --> CThreadMain
+ MV2000    -->CThreadSub
+ BMSSet  --> CThreadExtra
+
+
+
+
+// 에러 발생함//
+
+1. Port  2개중에 1개만 통신을 멈추면 Lock 에서 문제가 걸림.
+
+SingleLock 으로 설정으로 인한 오류
+
+2. 메모리 릭 발생함.
+
+  theApp.m_pCOM[0] = new CCOM(this, strPort[0], &dcb);
+ theApp.m_pCOM[1] = new CCOM(this, strPort[1], &dcb);
+ m_pThreadMain = new CThreadMain( this );
+  m_pThreadSub = new CThreadSub( this );
+  
+////////////////////2013-01-15 (수) //////////////////////
+
+Gain 설정 프로그램 v1.01 최종판 제작함
+
+1. 정적 라이브러리로 배포 할 예정
+
+2. 갱신 문제 해결함.
+
+3. Balancing Test 기능을 추가함
+
+
+
+////////////////////2013-03-06 (목) //////////////////////
+
+1. Slave BMS 프로그램에서 저장시, CSV 파일에서 데이터 값이 나오지
+   않는 현상을 해결함.
+   
+   
+   
+2. LED 깜빡임 기능을 제외시킴.

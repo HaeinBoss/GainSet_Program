@@ -1,7 +1,7 @@
 #GainSet_Program
 ver. 1.05
 
-Read and Write data from 2 BMS Board and MV2000 
+Read and Write data from 2 Batteries and MV2000 
 
 
 #Feature
